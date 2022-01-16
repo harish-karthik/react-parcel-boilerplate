@@ -4,9 +4,10 @@
   "description": "a template repository to be create react applications with parcel bundler",
   "default": "index.html",
   "scripts": {
-    "prebuild" : "rimraf -rf ./dist",
+    "prebuild": "rimraf -rf ./dist",
     "dev": "npm run prebuild && parcel serve ./public/index.html --open",
-    "build": "npm run prebuild && parcel build ./public/index.html"
+    "build": "npm run prebuild && parcel build ./public/index.html",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -23,11 +24,20 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.8",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/jest": "^27.4.0",
     "@types/node": "^17.0.8",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
+    "@types/react-test-renderer": "^17.0.1",
+    "jest": "^27.4.7",
     "parcel": "^2.2.0",
+    "react-test-renderer": "^17.0.2",
     "rimraf": "^3.0.2",
+    "ts-node": "^10.4.0",
     "typescript": "^4.5.4"
   }
 }
