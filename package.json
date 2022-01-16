@@ -1,0 +1,33 @@
+{
+  "name": "react-parcel-boilerplate",
+  "version": "0.0.1",
+  "description": "a template repository to be create react applications with parcel bundler",
+  "default": "index.html",
+  "scripts": {
+    "prebuild" : "rimraf -rf ./dist",
+    "dev": "npm run prebuild && parcel serve ./public/index.html --open",
+    "build": "npm run prebuild && parcel build ./public/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harish-karthik/react-parcel-boilerplate.git"
+  },
+  "author": "Harish Karthik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harish-karthik/react-parcel-boilerplate/issues"
+  },
+  "homepage": "https://github.com/harish-karthik/react-parcel-boilerplate#readme",
+  "dependencies": {
+    "@types/node": "^17.0.8",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "parcel": "^2.2.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.5.4"
+  }
+}
