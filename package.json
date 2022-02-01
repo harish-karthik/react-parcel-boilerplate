@@ -39,6 +39,7 @@
     "babel-plugin-inline-react-svg": "^2.0.1",
     "jest": "^27.4.7",
     "parcel": "^2.2.0",
+    "parcel-plugin-custom-dist-structure": "^1.1.18",
     "react-test-renderer": "^17.0.2",
     "rimraf": "^3.0.2",
     "ts-node": "^10.4.0",
