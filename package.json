@@ -4,9 +4,11 @@
   "description": "a template repository to be create react applications with parcel bundler",
   "default": "index.html",
   "scripts": {
-    "prebuild": "rimraf -rf ./dist",
-    "dev": "npm run prebuild && parcel serve ./public/index.html --open",
-    "build": "npm run prebuild && parcel build ./public/index.html",
+    "clean:dist": "rimraf -rf ./dist",
+    "clean:build": "rimraf -rf ./build",
+    "clean": "npm run clean:dist && npm run clean:build",
+    "dev": "npm run clean:dist && parcel serve ./src/index.html --open",
+    "build": "npm run clean:dist && parcel build ./src/index.html",
     "test": "jest"
   },
   "repository": {
@@ -39,10 +41,19 @@
     "babel-plugin-inline-react-svg": "^2.0.1",
     "jest": "^27.4.7",
     "parcel": "^2.2.0",
-    "parcel-plugin-custom-dist-structure": "^1.1.18",
+    "parcel-namer-rewrite": "^2.0.0-rc.2",
     "react-test-renderer": "^17.0.2",
     "rimraf": "^3.0.2",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.4"
+  },
+  "parcel-namer-rewrite": {
+    "chain": "@parcel/namer-default",
+    "rules": {
+      "(.*).css": "styles/$1.css",
+      "(.*).js": "scripts/$1.js",
+      "(.*).woff2": "fonts/$1.woff2",
+      "(.*).woff": "fonts/$1.woff"
+    }
   }
 }
