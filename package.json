@@ -5,7 +5,6 @@
   "default": "index.html",
   "scripts": {
     "clean:dist": "rimraf -rf ./dist",
-    "clean:build": "rimraf -rf ./build",
     "clean": "npm run clean:dist && npm run clean:build",
     "dev": "npm run clean:dist && parcel serve ./src/index.html --open",
     "build": "npm run clean:dist && parcel build ./src/index.html",
@@ -52,8 +51,8 @@
     "rules": {
       "(.*).css": "styles/$1.css",
       "(.*).js": "scripts/$1.js",
-      "(.*).woff2": "fonts/$1.woff2",
-      "(.*).woff": "fonts/$1.woff"
+      "(.*).(woff|woff2)": "fonts/$1.$2",
+      "(.*).(jpeg|jpg|png|webp|aviff|gif|svg)": "images/$1.$2"
     }
   }
 }
